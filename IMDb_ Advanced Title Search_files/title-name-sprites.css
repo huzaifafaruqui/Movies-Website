@@ -1,0 +1,644 @@
+/* title page sprites */
+.titlePageSprite {
+    background-image: url(/images/title/titlePageSprite.png);
+    display: inline-block;
+    vertical-align: middle;
+}
+
+label span.titlePageSprite {
+    vertical-align: baseline;
+}
+
+.showAllVidsAndPics {
+    background-position: -156px -99px;
+    height: 16px;
+    width: 16px;
+}
+
+.share_facebook {
+    background-position: -3px -90px;
+    height: 24px;
+    width: 24px;
+}
+
+.share_twitter {
+    background-position: -28px -90px;
+    height: 24px;
+    width: 24px;
+}
+
+.share_email {
+    background-position: -53px -90px;
+    height: 24px;
+    width: 24px;
+}
+
+.share_checkin {
+    background-position: -78px -90px;
+    height: 24px;
+    width: 24px;
+}
+
+/* certificate sprites - uses .titlePageSprite */
+.us_r {
+    background-position: -165px -3px;
+    height: 16px;
+    width: 18px;
+}
+
+.us_g {
+    background-position: -72px -3px;
+    height: 16px;
+    width: 17px;
+}
+
+.us_pg {
+    background-position: -91px -3px;
+    height: 16px;
+    width: 27px;
+}
+
+.us_pg_13 {
+    background-position: -119px -3px;
+    height: 16px;
+    width: 44px;
+}
+
+.us_nc_17 {
+    background-position: -185px -3px;
+    height: 16px;
+    width: 44px;
+}
+
+.us_unrated {
+    background-position: -219px -20px;
+    height: 16px;
+    width: 29px;
+}
+
+.us_not_rated {
+    background-position: -188px -20px;
+    height: 16px;
+    width: 29px;
+}
+
+.us_approved {
+    background-position: -2px -2px;
+    height: 18px;
+    width: 68px;
+}
+
+.us_x {
+    background-position: -231px -3px;
+    height: 16px;
+    width: 15px;
+}
+
+.us_tv_g {
+    background-position: -2px -20px;
+    height: 16px;
+    width: 24px;
+}
+
+.us_tv_pg {
+    background-position: -28px -20px;
+    height: 16px;
+    width: 32px;
+}
+
+.us_tv_y {
+    background-position: -61px -20px;
+    height: 16px;
+    width: 24px;
+}
+
+.us_tv_y7 {
+    background-position: -86px -20px;
+    height: 16px;
+    width: 32px;
+}
+
+.us_tv_14 {
+    background-position: -119px -20px;
+    height: 16px;
+    width: 30px;
+}
+
+.us_tv_ma {
+    background-position: -151px -20px;
+    height: 16px;
+    width: 35px;
+}
+
+.gb_12 {
+    background-position: -80px -55px;
+    height: 16px;
+    width: 15px;
+}
+
+.gb_15 {
+    background-position: -97px -55px;
+    height: 16px;
+    width: 15px;
+}
+
+.gb_12a {
+    background-position: -63px -55px;
+    height: 16px;
+    width: 15px;
+}
+
+.gb_18 {
+    background-position: -114px -55px;
+    height: 16px;
+    width: 15px;
+}
+
+.gb_pg {
+    background-position: -43px -55px;
+    height: 16px;
+    width: 18px;
+}
+
+.gb_18r {
+    background-position: -131px -55px;
+    height: 16px;
+    width: 16px;
+}
+
+.gb_uc {
+    background-position: -23px -55px;
+    height: 16px;
+    width: 18px;
+}
+
+.gb_u {
+    background-position: -3px -55px;
+    height: 16px;
+    width: 18px;
+}
+
+.gb_x {
+    background-position: -149px -55px;
+    height: 16px;
+    width: 16px;
+}
+
+.de_18 {
+    background-position: -67px -72px;
+    height: 16px;
+    width: 15px;
+}
+
+.de_16 {
+    background-position: -51px -72px;
+    height: 16px;
+    width: 15px;
+}
+
+.de_12 {
+    background-position: -35px -72px;
+    height: 16px;
+    width: 15px;
+}
+
+.de_6 {
+    background-position: -19px -72px;
+    height: 16px;
+    width: 15px;
+}
+
+.de_0 {
+    background-position: -3px -72px;
+    height: 16px;
+    width: 15px;
+}
+
+.de_jugendverbot {
+    background-position: -83px -72px;
+    height: 17px;
+    width: 71px;
+}
+
+.fr_10 {
+    background-position: -86px -38px;
+    height: 16px;
+    width: 15px;
+}
+
+.fr_12 {
+    background-position: -102px -38px;
+    height: 16px;
+    width: 15px;
+}
+
+.fr_16 {
+    background-position: -118px -38px;
+    height: 16px;
+    width: 15px;
+}
+
+.fr_18 {
+    background-position: -134px -38px;
+    height: 16px;
+    width: 15px;
+}
+
+.fr_x {
+    background-position: -150px -38px;
+    height: 16px;
+    width: 15px;
+}
+
+.it_t {
+    background-position: -172px -55px;
+    height: 16px;
+    width: 15px;
+}
+
+.it_vm14 {
+    background-position: -189px -55px;
+    height: 16px;
+    width: 15px;
+}
+
+.it_vm18 {
+    background-position: -172px -55px;
+    height: 16px;
+    width: 15px;
+}
+
+.it_x {
+    background-position: -223px -55px;
+    height: 16px;
+    width: 15px;
+}
+
+.es_7 {
+    background-position: -168px -38px;
+    height: 16px;
+    width: 15px;
+}
+
+.es_13 {
+    background-position: -184px -38px;
+    height: 16px;
+    width: 15px;
+}
+
+.es_15 {
+    background-position: -200px -38px;
+    height: 16px;
+    width: 15px;
+}
+
+.es_18 {
+    background-position: -216px -38px;
+    height: 16px;
+    width: 15px;
+}
+
+.es_x {
+    background-position: -232px -38px;
+    height: 16px;
+    width: 15px;
+}
+
+.pt_m_4 {
+    background-position: -3px -38px;
+    height: 16px;
+    width: 15px;
+}
+
+.pt_m_6 {
+    background-position: -19px -38px;
+    height: 16px;
+    width: 15px;
+}
+
+.pt_m_12 {
+    background-position: -35px -38px;
+    height: 16px;
+    width: 15px;
+}
+
+.pt_m_16 {
+    background-position: -103px -90px;
+    height: 16px;
+    width: 15px;
+}
+
+.pt_m_17 {
+    background-position: -51px -38px;
+    height: 16px;
+    width: 15px;
+}
+
+.pt_m_18 {
+    background-position: -67px -38px;
+    height: 16px;
+    width: 15px;
+}
+
+/* watch option sprites - uses .titlePageSprite */
+
+.aiv38 {
+    background-position: -3px -177px;
+    height: 38px;
+    width: 38px;
+}
+
+.buyam38 {
+    background-position: -42px -177px;
+    height: 38px;
+    width: 38px;
+}
+
+.biography38 {
+    background-position: -81px -177px;
+    height: 38px;
+    width: 38px;
+}
+
+.buydisk38 {
+    background-position: -120px -177px;
+    height: 38px;
+    width: 38px;
+}
+
+.cartoon38 {
+    background-position: -159px -177px;
+    height: 38px;
+    width: 38px;
+}
+
+.comedycentral38 {
+    background-position: -198px -177px;
+    height: 38px;
+    width: 38px;
+}
+
+.crackle38 {
+    background-position: -237px -177px;
+    height: 38px;
+    width: 38px;
+}
+
+.disney38 {
+    background-position: -3px -216px;
+    height: 38px;
+    width: 38px;
+}
+
+.fancast38 {
+    background-position: -42px -216px;
+    height: 38px;
+    width: 38px;
+}
+
+.history38 {
+    background-position: -81px -216px;
+    height: 38px;
+    width: 38px;
+}
+
+.hulu38 {
+    background-position: -120px -216px;
+    height: 38px;
+    width: 38px;
+}
+
+.imdb38 {
+    background-position: -159px -216px;
+    height: 38px;
+    width: 38px;
+}
+
+.lovefilm38 {
+    background-position: -198px -216px;
+    height: 38px;
+    width: 38px;
+}
+
+.lovefilm_de38 {
+    background-position: -237px -216px;
+    height: 38px;
+    width: 38px;
+}
+
+.nick38 {
+    background-position: -3px -255px;
+    height: 38px;
+    width: 38px;
+}
+
+.placeholder38 {
+    background-position: -42px -255px;
+    height: 38px;
+    width: 38px;
+}
+
+.showtime38 {
+    background-position: -81px -255px;
+    height: 38px;
+    width: 38px;
+}
+
+.snag38 {
+    background-position: -120px -255px;
+    height: 38px;
+    width: 38px;
+}
+
+.spike38 {
+    background-position: -159px -255px;
+    height: 38px;
+    width: 38px;
+}
+
+.tbs38 {
+    background-position: -198px -255px;
+    height: 38px;
+    width: 38px;
+}
+
+.tv38 {
+    background-position: -237px -255px;
+    height: 38px;
+    width: 38px;
+}
+
+.wb38 {
+    background-position: -3px -294px;
+    height: 38px;
+    width: 38px;
+}
+
+.cw38 {
+    background-position: -42px -294px;
+    height: 38px;
+    width: 38px;
+}
+
+.mtv38 {
+    background-position: -81px -294px;
+    height: 38px;
+    width: 38px;
+}
+
+.tvland38 {
+    background-position: -120px -294px;
+    height: 38px;
+    width: 38px;
+}
+
+.aiv18 {
+    background-position: -3px -118px;
+    height: 18px;
+    width: 18px;
+}
+
+.buyam18 {
+    background-position: -22px -118px;
+    height: 18px;
+    width: 18px;
+}
+
+.biography18 {
+    background-position: -41px -118px;
+    height: 18px;
+    width: 18px;
+}
+
+.buydisk18 {
+    background-position: -60px -118px;
+    height: 18px;
+    width: 18px;
+}
+
+.cartoon18 {
+    background-position: -79px -118px;
+    height: 18px;
+    width: 18px;
+}
+
+.comedycentral18 {
+    background-position: -98px -118px;
+    height: 18px;
+    width: 18px;
+}
+
+.crackle18 {
+    background-position: -117px -118px;
+    height: 18px;
+    width: 18px;
+}
+
+.cw18 {
+    background-position: -136px -118px;
+    height: 18px;
+    width: 18px;
+}
+
+.tbs18 {
+    background-position: -155px -118px;
+    height: 18px;
+    width: 18px;
+}
+
+.disney18 {
+    background-position: -3px -137px;
+    height: 18px;
+    width: 18px;
+}
+
+.fancast18 {
+    background-position: -22px -137px;
+    height: 18px;
+    width: 18px;
+}
+
+.history18 {
+    background-position: -41px -137px;
+    height: 18px;
+    width: 18px;
+}
+
+.hulu18 {
+    background-position: -60px -137px;
+    height: 18px;
+    width: 18px;
+}
+
+.imdb18 {
+    background-position: -79px -137px;
+    height: 18px;
+    width: 18px;
+}
+
+.lovefilm18 {
+    background-position: -98px -137px;
+    height: 18px;
+    width: 18px;
+}
+
+.mtv18 {
+    background-position: -117px -137px;
+    height: 18px;
+    width: 18px;
+}
+
+.nick18 {
+    background-position: -136px -137px;
+    height: 18px;
+    width: 18px;
+}
+
+.placeholder18 {
+    background-position: -155px -137px;
+    height: 18px;
+    width: 18px;
+}
+
+.showtime18 {
+    background-position: -174px -137px;
+    height: 18px;
+    width: 18px;
+}
+
+.snag18 {
+    background-position: -193px -137px;
+    height: 18px;
+    width: 18px;
+}
+
+.spike18 {
+    background-position: -212px -137px;
+    height: 18px;
+    width: 18px;
+}
+
+.tv18 {
+    background-position: -231px -137px;
+    height: 18px;
+    width: 18px;
+}
+
+.tvland18 {
+    background-position: -250px -137px;
+    height: 18px;
+    width: 18px;
+}
+
+.wb18 {
+    background-position: -3px -156px;
+    height: 18px;
+    width: 18px;
+}
+
+.aiv-horizontalcustom {
+    background-position: -22px -155px;
+    height: 20px;
+    width: 85px;
+}
+

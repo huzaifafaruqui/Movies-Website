@@ -1,0 +1,330 @@
+/****** a standard vertically-aligned set of divs. ***********/
+
+.leftright div#left {
+    float: left;
+}
+.leftright div#right {
+    float: right;
+    text-align: right;
+}
+.leftrightcenter {
+    width: 100%;
+    clear: both;
+}
+.leftrightcenter div#left {
+    float: left;
+    width: 30%;
+}
+.leftrightcenter div#center {
+    float: left;
+    text-align: center;
+    width: 38%;
+}
+.leftrightcenter div#right {
+    float: right;
+    text-align: right;
+    width: 30%;
+}
+
+/*********************************************************/
+.clear {
+    clear: both;
+}
+.clearLeft {
+    clear: left;
+}
+.clearRight {
+    clear: right;
+}
+/****** page layout **************************************/
+
+/****** header column applies to all layouts. ***********/
+
+#header {
+    width: 966px;
+    margin:auto;
+}
+
+/****** one column layout. ******************************/
+
+div#content-1 {
+    margin-top:20px;
+}
+#content-1 #main {
+    margin: 0px 20px 0px 20px;
+}
+/****** two column layout options. **********************/
+
+div#content-2-wide {
+    margin-top:20px;
+}
+#content-2-narrow #sidebar {
+    border-right:1px dotted #CCCCCC;
+    float:left;
+    margin-left:20px;
+    width:160px;
+}
+#content-2-narrow #main {
+    width: 780px;
+    float: right;
+    padding-right:20px;
+}
+#content-2-wide #sidebar, #content-2-wide .maindetails_sidebar {
+    width: 300px;
+    font-size:100%;
+    margin-right:20px;
+    float: right;
+}
+#content-2-wide #main, #content-2-wide .maindetails_center {
+    width: 646px;
+    float: left;
+    margin-left:20px;
+}
+
+#maindetails_center_top {
+    margin-bottom: 400px;
+}
+
+#maindetails_center_bottom {
+    margin-top: -400px;
+}
+
+table#outerbody #content-2-wide #main {
+    margin-left:0px;
+}
+table#outerbody #content-2-wide #sidebar {
+    margin-right:0px;
+}
+#content-2-odd #sidebar {
+    width: 160px;
+    float: right;
+}
+#content-2-odd #main {
+    width: 80%;
+    float: left;
+}
+/****** three column layout options. **********************/
+
+#content-3 #sidebar-narrow {
+    width: 160px;
+    float: left;
+    margin-left: 20px;
+    border-right: #ccc 1px dotted;
+}
+#content-3 #sidebar-wide {
+    width: 300px;
+    float: right;
+    margin-right: 20px;
+}
+#content-3 #main {
+    width: 460px;
+    float: left;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+
+/****** Grids (rows and columns) ***********/
+/* NOTE: This will be replaced by Bootstrap grids */
+
+.container {
+    padding: 0 20px;
+}
+
+/* Clearfix for rows */
+.grid-row:before,
+.grid-row:after {
+    content: "";
+    display: table;
+}
+.grid-row:after {
+    clear: both;
+}
+.grid-row {
+    zoom: 1; /* For IE 6/7 (trigger hasLayout) */
+}
+
+/* Traditional box model instead of width only applying to content */
+.grid-row,
+.grid-col {
+    box-sizing: border-box;
+}
+.grid-row .grid-col{
+    float: left;
+}
+
+/* Specific grid widths based on 12-column grid (add as needed until we have Bootstrap) */
+.grid-col-4 {
+    margin-left: 2%;
+    width: 32%;
+}
+.grid-col-4:first-child {
+    margin: 0;
+}
+
+
+
+
+/****** Footer ***********/
+#footer {
+    background-color: #EDEDEC;
+    clear: both;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 11px;
+    padding-bottom: 30px;
+}
+#footer hr {
+    display: none;
+}
+#footer h3 {
+    color: #333;
+    font-family: Arial, sans-serif normal;
+    font-size: 18px;
+    margin: 0 0 16px;
+}
+#footer h3 > div {
+    margin-top: 11px;
+}
+#rvi-div,
+.footer-grid-wrapper {
+    border-top: 1px solid #CCC;
+}
+
+
+/* Footer grid has hardcoded widths */
+.footer-grid-wrapper {
+    border-bottom: 1px solid #CCC;
+    font-size: 12px;
+    line-height: 15px;
+    margin: 0 0 20px;
+    padding: 0 20px;
+}
+.footer-grid-wrapper p {
+    line-height: 150%;
+}
+.footer-row > .grid-col {
+    height: 210px;
+    padding-top: 20px;
+    position: relative;
+}
+.footer-row .grid-col .grid-col {
+    padding: 0;
+}
+.footer-row .center {
+    border: 1px solid #CCC;
+    border-width: 0 1px;
+    text-align: center;
+    width: 168px;
+    margin: 0 20px;
+}
+.footer-row .outside {
+    width: 380px;
+}
+
+/* Mdot touch link */
+.footer-row a.touchlink {
+    border-top: 1px solid #CCC;
+    bottom: 0;
+    display: block;
+    font-size: 14px;
+    left: 0;
+    margin: 0 -20px;
+    padding: 12px 20px;
+    position: absolute;
+    right: 0;
+}
+.footer-row a.touchlink::after {
+    content: "\0000a0\0000bb";
+    float: right;
+}
+
+/* Link farm */
+.footer-grid-wrapper ul {
+    padding-top: 5px;
+}
+.footer-grid-wrapper li {
+    margin-bottom: 6px;
+}
+.footer-grid-wrapper .spacer {
+    border-bottom: 1px solid #CCC;
+    height: 7px;
+    margin-bottom: 13px;
+    width: 30px;
+}
+
+/* Follow IMDb Widget */
+.icon-link-bar div {
+    padding: 5px 0 0;
+    text-align: center;
+}
+.desktop-sprite {
+    background-image: url(/images/navbar/navbar_sprite_social.png);
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+}
+.follow-facebook {
+    background-position: -120px 0;
+}
+.follow-instagram {
+    background-position: -120px -80px;
+}
+.follow-twitter {
+    background-position: -120px -40px;
+}
+
+/* App store section */
+.app-links .desktop-sprite {
+  margin-left: 4px;
+}
+.app-links a:first-child .desktop-sprite {
+  margin-left: 0;
+}
+
+.appstore-amazon {
+    background-position: 0 -660px;
+    height: 39px;
+    width: 115px;
+}
+.appstore-apple {
+    background-position: 0 -574px;
+    height: 39px;
+    width: 133px;
+}
+.appstore-google {
+    background-position: 0 -617px;
+    height: 39px;
+    width: 115px;
+}
+
+/* Remove icon underlines */
+.icon-link-bar a,
+.icon-link-bar a:hover,
+.icon-link-bar a:active,
+.app-links a,
+.app-links a:hover,
+.app-links a:active {
+    text-decoration: none;
+}
+
+#footer .float-right {
+    float: right;
+}
+#amazon_logo {
+    vertical-align: top;
+}
+
+#amazon-affiliates {
+    margin: 30px auto 0;
+    width: 968px;
+}
+#amazon-affiliates td {
+    padding: 0;
+}
+#amazon-affiliates td div {
+    padding: 0 0 0 35px;
+}
+#amazon-affiliates td:first-child div {
+    padding: 0;
+}
