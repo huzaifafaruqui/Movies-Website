@@ -19,6 +19,7 @@ And of course this website itself is open source with a [public repository][dill
 Want to contribute? Great!
 
 To fix a bug or enhance an existing module, follow these steps:
+
 1. Fork the repo
 2. Create a new branch (`git checkout -b improve-feature`)
 3. Make the appropriate changes in the files
