@@ -17,12 +17,12 @@ class Director(models.Model):
 	def __str__(self):
 		return u'%s %s' % (self.first_name, self.last_name)
 
-class Movies(models.Model):
+class Movie(models.Model):
 	title=models.CharField(max_length=30)
 	release_date=models.DateField()
 	actors=models.ManyToManyField(Actor)
 	director=models.ForeignKey(Director)
-	image=models.ImageField(upload_to = 'pic_folder/', default = 'pictures/movie2.jpg')
+	image=models.ImageField(upload_to = 'static/images/products', default = 'pictures/movie2.jpg')
 	duration=models.DurationField()
 	def __str__(self):
 		return u'%s' % (self.title)
