@@ -22,10 +22,10 @@ from django.views.generic import RedirectView
 import signup.urls
 import login.urls
 import home.urls
-import myapp.urls
+
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^',include(home.urls)),
+    url(r'^home/',include(home.urls)),
     url(r'^signup/',include(signup.urls)),
     url(r'^display/',include(signup.urls)),
     url(r'^login/',include(login.urls)),
