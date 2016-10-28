@@ -13,7 +13,27 @@ This website uses a number of open source projects to work properly:
 
 And of course this website itself is open source with a [public repository][dill]
  on GitHub.
+### Local Development / Testing
+1. Open terminal
+2. sudo pip install pip --upgrade
+3. pip install virtualenv
+4. mkdir movieweb
+5. cd movieweb
+6. virtualenv .
+7. source bin/activate
+8. pip install django==1.9
+11. Clone/Download this repo
+12. cd Movies-Website/lmdb
+13. sudo rm -rf home/migrations/*
+14. sudo rm db.sqlite3
+15. python manage.py makemigrations home
+16. python manage.py migrate
+17. python manage.py createsuperuser (optional)
+18. python manage.py runserver
+19. Visit 127.0.0.1:8000/ 
 
+
+  	
 ### Development
 
 Want to contribute? Great!
