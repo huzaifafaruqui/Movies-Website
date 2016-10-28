@@ -4,6 +4,5 @@ import home.views
 #from .import views
 urlpatterns=[
     url(r'^$',home.views.base),
-    
-    
+
 ]

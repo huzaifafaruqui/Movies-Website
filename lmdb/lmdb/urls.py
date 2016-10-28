@@ -19,17 +19,17 @@ from django.conf.urls import include, url
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.views.generic import RedirectView
-import signup.urls
-import login.urls
-import home.urls
+from django.contrib.auth.views import login
+
+import home.views
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^home/',include(home.urls)),
-    url(r'^signup/',include(signup.urls)),
-    url(r'^display/',include(signup.urls)),
-    url(r'^login/',include(login.urls)),
-    
+    url(r'^$',home.views.base),
+    url(r'^movie/(?P<id>\d+)/$', home.views.movie_page),
+    url(r'^register/$',home.views.register_page),
+    url(r'^login/$',login,name='login'),
+    url(r'^logout/$', home.views.logout_page),
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

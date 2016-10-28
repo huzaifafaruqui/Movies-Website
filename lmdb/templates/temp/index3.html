@@ -26,14 +26,14 @@
         <li><a class="active" href="#">HOME</a></li>
         <li><a href="#">NEWS</a></li>
         <li><a href="#">IN THEATERS</a></li>
-         {% if user.is_authenticated %}
-			<li>Welcome {{ user.username }}</li>
-			<li><a href="/logout/">Logout</a></li>
+         {% if user|stringformat:"s" != "AnonymousUser" %}
+        <li>Welcome {{ user }} !!!</li>       
+        <li><a href="http://127.0.0.1:8000/home">LOGOUT</a></li>
         
         {% else %}
-         <li>Welcome anonymous</li> 
-        <li><a href="/register/">Signup</a></li>
-        <li><a href="/login/">Login</a></li>
+         
+        <li><a href="http://127.0.0.1:8000/signup/">signup</a></li>
+        <li><a href="http://127.0.0.1:8000/login/">login</a></li>
         
 
 
@@ -66,10 +66,8 @@
           <h2>LATEST MOVIES</h2>
           <p class="text-right"><a href="#">See all</a></p>
         </div>
-        {% for movie in movies %}
-
         <div class="movie">
-          <div class="movie-image"> <a href="movie/{{movie.id}}"><span class="play"><span class="name">{{movie.title }}</span></span> <img src="{{ movie.image.url }}" alt="" /></a> </div>
+          <div class="movie-image"> <span class="play"><span class="name">X-MAN</span></span> <a href="#"><img src="/static/css/images/movie1.jpg" alt="" /></a> </div>
           <div class="rating">
             <p>RATING</p>
             <div class="stars">
@@ -77,8 +75,7 @@
             </div>
             <span class="comments">12</span> </div>
         </div>
-       {% endfor %}
-
+       
       
         
        
