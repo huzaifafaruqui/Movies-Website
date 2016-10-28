@@ -253,7 +253,7 @@ h1#logo a {
 	left:0;
 	width:152px;
 	height:214px;
-	/*background:url('images/image-hover.png');*/
+	background:url('images/image-hover.png');
 	display:block;
 	z-index:5;
 	cursor:pointer;
