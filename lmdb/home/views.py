@@ -43,3 +43,16 @@ def movie_page(request, id):
 	'movie': movie
 	}
 	return render(request,"movie.html",context)
+	
+def add_comment_to_movie(request, id):
+    movie = get_object_or_404(Movie, id=id)
+    if request.method == "POST":
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.movie = movie
+            comment.save()
+            return HttpResponseRedirect('/movie/%d/'%movie.id)
+    else:
+        form = CommentForm()
+    return render(request, 'add_comment_to_movie.html', {'form': form})	

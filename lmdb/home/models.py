@@ -1,7 +1,7 @@
 from __future__ import unicode_literals
 
 from django.db import models
-
+from django.utils import timezone
 # Create your models here.
 
 class Actor(models.Model):
@@ -27,9 +27,16 @@ class Movie(models.Model):
 	def __str__(self):
 		return u'%s' % (self.title)
 
-#class SharedMovie(models.Model):
-#	title=models.ForeignKey(Movie,unique=True)
-#	votes = models.IntegerField(default=1)
-#	users_voted = models.ManyToManyField(User)
-#	def __unicode__(self):
-#		return u'%s, %s' % (self.bookmark, self.votes)
+class Comment(models.Model):
+    movie = models.ForeignKey('home.Movie', related_name='comments')
+    author = models.CharField(max_length=200)
+    text = models.TextField()
+    created_date = models.DateTimeField(default=timezone.now)
+    approved_comment = models.BooleanField(default=False)
+
+    def approve(self):
+        self.approved_comment = True
+        self.save()
+
+    def __str__(self):
+        return self.text

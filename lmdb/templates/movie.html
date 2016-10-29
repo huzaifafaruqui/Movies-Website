@@ -6,9 +6,21 @@
 
 <p><img src="{{movie.image.url}}" alt=""/></p>
 <p>Release date: {{movie.release_date}}</p>
-<ul>
-
-</ul>
+{% if user.is_authenticated %}
+<a class="btn btn-default" href="{% url 'add_comment_to_movie' id=movie.id %}">Add comment</a>
+{% else %}
+<p>Login to comment</p>
+{% endif %}
+<p></p>
+{% for comment in movie.comments.all %}
+    <div>
+        <div>{{ comment.created_date }}</div>
+        <strong>{{ comment.author }}</strong>
+        <p>{{ comment.text|linebreaks }}</p>
+    </div>
+{% empty %}
+    <p>No comments here yet :(</p>
+{% endfor %}    
 </body>
     
 </html>

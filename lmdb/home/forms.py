@@ -1,6 +1,7 @@
 from django import forms
 import re
 from django.contrib.auth.models import User
+from .models import Movie,Comment
 class RegistrationForm(forms.Form):
 	username = forms.CharField(label=u'Username', max_length=30)
 	email = forms.EmailField(label=u'Email')
@@ -29,3 +30,9 @@ class RegistrationForm(forms.Form):
 		except User.DoesNotExist:
 			return username
 		raise forms.ValidationError('Username is already taken.')
+
+class CommentForm(forms.ModelForm):
+
+    class Meta:
+        model = Comment
+        fields = ('author', 'text',)

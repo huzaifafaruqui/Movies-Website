@@ -30,6 +30,7 @@ urlpatterns = [
     url(r'^register/$',home.views.register_page),
     url(r'^login/$',login,name='login'),
     url(r'^logout/$', home.views.logout_page),
+    url(r'^movie/(?P<id>\d+)/comment/$', home.views.add_comment_to_movie, name='add_comment_to_movie'),
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
