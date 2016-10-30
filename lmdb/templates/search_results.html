@@ -9,7 +9,7 @@
             <p>Found {{ movies|length }} movie{{ movies|pluralize }}</p>
             <ul>               
                 {% for movie in movies %}               
-                <li>{{ movie.title }}</li>               
+                <a href="/movie/{{movie.id}}"><li>{{ movie.title }}</li> </a>              
                 {% endfor %}           
             </ul>       
         {% else %}           
