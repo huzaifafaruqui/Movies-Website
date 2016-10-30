@@ -6,10 +6,27 @@ from django.core.urlresolvers import reverse
 from home.models import Movie
 from django.contrib.auth import logout
 from home.forms import *
-
+from django.contrib import messages
 # Create your views here.
 
+from django.shortcuts import render
 
+
+    
+def search(request):
+	error = False
+	if 'q' in request.GET:
+		q = request.GET['q']
+        if not q:
+        	error=True
+        else:
+        	movies = Movie.objects.filter(title__icontains=q)
+        	return render(request, 'search_results.html',
+                      {'movies': movies, 'query': q})
+	if error==True:	
+		messages.error(request, "Enter something!")
+	return HttpResponseRedirect('/')
+    
 def register_page(request):
 	if request.method == 'POST':
 		form = RegistrationForm(request.POST)

@@ -1,0 +1,19 @@
+<html>     
+    <head>         
+    <title>Movie Search</title>     
+    </head>     
+    <body>       
+        <p>You searched for: <strong>{{ query }}</strong></p>
+   
+        {% if movies %}           
+            <p>Found {{ movies|length }} movie{{ movies|pluralize }}</p>
+            <ul>               
+                {% for movie in movies %}               
+                <li>{{ movie.title }}</li>               
+                {% endfor %}           
+            </ul>       
+        {% else %}           
+            <p>No movies matched your search criteria.</p>       
+        {% endif %}     
+    </body>
+</html>
