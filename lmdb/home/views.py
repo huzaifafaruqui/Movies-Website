@@ -7,6 +7,7 @@ from home.models import Movie
 from django.contrib.auth import logout
 from home.forms import *
 from django.contrib import messages
+from django.db.models import Avg
 # Create your views here.
 
 from django.shortcuts import render
@@ -38,8 +39,6 @@ def register_page(request):
 			return HttpResponseRedirect('/')
 	else:
 		form = RegistrationForm()
-	#variables = RequestContext(request, {'form': form})
-	#return render_to_response('registration/register.html',variables)
 	return render(request,'registration/register.html',({'form':form}))
 def logout_page(request):
 	logout(request)
@@ -56,8 +55,11 @@ def base(request):
 	return render(request, "index.html", context)
 def movie_page(request, id):
 	movie=get_object_or_404(Movie,id=id)
+	#avg_stars = movie.objects.annotate(Avg('rating__stars'))
+	
 	context={
-	'movie': movie
+	'movie': movie,
+	#'stars':avg_stars
 	}
 	return render(request,"movie.html",context)
 	
@@ -68,6 +70,7 @@ def add_comment_to_movie(request, id):
         if form.is_valid():
             comment = form.save(commit=False)
             comment.movie = movie
+            comment.author = request.user
             comment.save()
             return HttpResponseRedirect('/movie/%d/'%movie.id)
     else:

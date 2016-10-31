@@ -78,10 +78,8 @@
         <div class="movie">
           <div class="movie-image"> <a href="movie/{{movie.id}}"><span class="play"><span class="name">{{movie.title }}</span></span> <img src="{{ movie.image.url }}" alt="" /></a> </div>
           <div class="rating">
-            <p>RATING</p>
-            <div class="stars">
-              <div class="stars-in"> </div>
-            </div>
+            <p style="color:red">RATING {{movie.average_rating}}</p>
+            
             <span class="comments">{{ movie.comments.count }}</span> </div>
         </div>
        {% endfor %}
