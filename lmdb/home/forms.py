@@ -36,3 +36,14 @@ class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
         fields = ('rating', 'text',)
+
+
+class SearchForm(forms.ModelForm):
+	class Meta:
+		model=Movie
+		exclude=['image','duration']
+
+class SearchForm2(forms.ModelForm):
+	class Meta:
+		model=Comment
+		fields=['rating']		

@@ -27,11 +27,13 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$',home.views.base),
     url(r'^movie/(?P<id>\d+)/$', home.views.movie_page),
+    url(r'^movie/(?P<id>\d+)/list_comments/$', home.views.list_comments),
     url(r'^register/$',home.views.register_page),
     url(r'^login/$',login,name='login'),
     url(r'^logout/$', home.views.logout_page),
     url(r'^movie/(?P<id>\d+)/comment/$', home.views.add_comment_to_movie, name='add_comment_to_movie'),
 	url(r'^search/$', home.views.search),
+	url(r'^advanced/$',home.views.advanced),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 if settings.DEBUG:

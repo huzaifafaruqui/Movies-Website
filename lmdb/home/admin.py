@@ -5,7 +5,7 @@ from django.contrib import admin
 from home.models import Movie,Actor,Director,Comment
 
 class MovieAdmin(admin.ModelAdmin):
-    list_display=('title','release_date','duration','director')
+    list_display=('title','release_date','duration','director','genre')
     search_fields=('title','release_date')
     list_filter=('release_date',)
     date_hierarchy=('release_date')

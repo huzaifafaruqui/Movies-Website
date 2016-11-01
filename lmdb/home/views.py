@@ -12,8 +12,30 @@ from django.db.models import Avg
 
 from django.shortcuts import render
 
+def advanced(request):
+	form=SearchForm(request.POST or None)
+	form2=SearchForm2(request.POST or None)
 
-    
+	if form.is_valid() and form2.is_valid():
+		f1=form.cleaned_data['title'].lower()
+		f2=form.cleaned_data['actors']
+		context={
+		"title":f1
+		,'actors':f2
+		}
+		queryset=Movie.objects.filter(title__icontains=f1)
+		
+		return render(request,"x.html",context)
+		#for obj in queryset:
+		#	if obj.title and f2==obj.:
+				#return render(request,"index.html",context)
+
+	context={
+    'form':form,'form2':form2
+
+    }
+	return render(request,"advanced_search.html",context)
+
 def search(request):
 	error = False
 	if 'q' in request.GET:
@@ -62,6 +84,16 @@ def movie_page(request, id):
 	#'stars':avg_stars
 	}
 	return render(request,"movie.html",context)
+
+def list_comments(request,id):
+	movie=get_object_or_404(Movie,id=id)
+	#avg_stars = movie.objects.annotate(Avg('rating__stars'))
+	
+	context={
+	'movie': movie,
+	#'stars':avg_stars
+	}
+	return render(request,"all_comments.html",context)
 	
 def add_comment_to_movie(request, id):
     movie = get_object_or_404(Movie, id=id)

@@ -23,10 +23,13 @@ class Director(models.Model):
 		return u'%s %s' % (self.first_name, self.last_name)
 
 class Movie(models.Model):
-	title=models.CharField(max_length=30)
-	release_date=models.DateField()
-	actors=models.ManyToManyField(Actor)
-	director=models.ForeignKey(Director)
+	#RATINGS=((5,5),(4,4),(3,3),(2,2),(1,1))
+	genres=(('action','ACTION'),('comedy','COMEDY'),('romance','ROMANCE'),('thriller','THRILLER'),('drama','DRAMA'))
+	title=models.CharField(max_length=30,blank=True)
+	release_date=models.DateField(blank=True)
+	actors=models.ManyToManyField(Actor,blank=True)
+	director=models.ForeignKey(Director,blank=True,null=True)
+	genre=models.CharField(max_length=30,choices=genres,default='drama',blank=True)
 	image=models.ImageField(upload_to = 'static/images/products', default = 'pictures/movie2.jpg')
 	duration=models.DurationField()
 	@property #http://www.blog.pythonlibrary.org/2014/01/20/python-201-properties/

@@ -1,29 +1,22 @@
 <!--DOCTYPE html -->
-<html>
-<body>
+{% extends 'base.html' %}
+
+
+ {% block content %}  
 <h1>{{movie}}</h1>
 
 
 <p><img src="{{movie.image.url}}" alt=""/></p>
 <p>Release date: {{movie.release_date}}</p>
 <p>Average Rating: <strong>{{movie.average_rating}}</strong></p>
+<p>Genre: {{movie.genre}}</p>
 <!--<p>{{stars}}</p>-->
 {% if user.is_authenticated %}
-<a class="btn btn-default" href="{% url 'add_comment_to_movie' id=movie.id %}">Add comment</a>
+<p><a class="btn btn-default" href="{% url 'add_comment_to_movie' id=movie.id %}">Add comment</a>
+</p><p><a href="list_comments/">View all comments</a></p>
 {% else %}
 <p>Login to comment</p>
 {% endif %}
 <p></p>
-{% for comment in movie.comments.all %}
-    <div>
-        <div>{{ comment.created_date }}</div>
-        <strong>{{ comment.author }}</strong>
-        <p>Rating:<strong> {{ comment.rating }}</strong><p>
-        <p>{{ comment.text|linebreaks }}</p>
-    </div>
-{% empty %}
-    <p>No comments here yet :(</p>
-{% endfor %}    
-</body>
-    
-</html>
+
+{% endblock %}

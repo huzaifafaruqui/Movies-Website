@@ -1,0 +1,37 @@
+
+{% extends 'base.html' %}
+
+
+ {% block content %}  
+<h1>{{movie}}</h1>
+
+
+  <table width="1000">
+  <th width="150">Username</th>
+  <th width="150">Rating</th>
+  <th width="400">Comment</th>
+  <th width="400">Created</th>
+{% for comment in movie.comments.all %}
+
+ <!--   <div>
+       <pre><strong>Username: {{ comment.author }}		Rating: {{ comment.rating}}		Date: {{ comment.created_date }}</strong></pre>
+        <p>{{ comment.text|linebreaks }}</p>
+    </div>
+   </li> 
+  -->
+  
+<tr>
+  <td width="150" align="center">{{ comment.author }}</td>
+  <td width="150" align="center">{{ comment.rating}}</td>
+ 
+<td width="300" align="center">{{ comment.text }}</td>	 
+<td width="400" align="center">{{ comment.created_date }}</td>   
+   </tr>
+
+{% empty %}
+    <p>No comments here yet :(</p>
+{% endfor %}    
+
+</table>
+
+{%endblock%}
