@@ -57,7 +57,9 @@ def register_page(request):
 			user = User.objects.create_user(
 			username=form.cleaned_data['username'],
 			password=form.cleaned_data['password1'],
-			email=form.cleaned_data['email'])
+			email=form.cleaned_data['email'],
+			first_name=form.cleaned_data['name'])
+			
 			return HttpResponseRedirect('/')
 	else:
 		form = RegistrationForm()
@@ -97,6 +99,10 @@ def list_comments(request,id):
 	
 def add_comment_to_movie(request, id):
     movie = get_object_or_404(Movie, id=id)
+    x=Comment.objects.filter(movie=movie,author=request.user)
+    if len(x)>0:
+		messages.error(request, "User already commented!")
+		return HttpResponseRedirect('/movie/%d/'%movie.id)
     if request.method == "POST":
         form = CommentForm(request.POST)
         if form.is_valid():

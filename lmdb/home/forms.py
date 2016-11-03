@@ -3,6 +3,7 @@ import re
 from django.contrib.auth.models import User
 from .models import Movie,Comment
 class RegistrationForm(forms.Form):
+	name=forms.CharField(label=u'Name',max_length=30)
 	username = forms.CharField(label=u'Username', max_length=30)
 	email = forms.EmailField(label=u'Email')
 	password1 = forms.CharField(

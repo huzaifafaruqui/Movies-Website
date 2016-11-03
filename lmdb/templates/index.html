@@ -2,6 +2,12 @@
 
 
  {% block content %} 
+ {% if messages %}
+  
+      {% for message in messages %}
+      <p>{{ message }}</p>
+      {% endfor %}
+{% endif %}
           <h2>LATEST MOVIES</h2>
           <p class="text-right"><a href="#">See all</a></p>
         

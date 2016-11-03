@@ -12,6 +12,11 @@
 <p>Genre: {{movie.genre}}</p>
 <!--<p>{{stars}}</p>-->
 {% if user.is_authenticated %}
+{% if messages %}
+	{% for message in messages %}
+      <p>{{ message }}</p>
+	{% endfor %}
+{% endif %}
 <p><a class="btn btn-default" href="{% url 'add_comment_to_movie' id=movie.id %}">Add comment</a>
 </p><p><a href="list_comments/">View all comments</a></p>
 {% else %}

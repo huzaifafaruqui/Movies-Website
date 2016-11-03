@@ -50,13 +50,7 @@
         <li><a href="/advanced/">ADVANCED SEARCH</a></li>
       </ul>
       <div id="search">
-     {% if messages %}
-  
-      {% for message in messages %}
-      <p>{{ message }}</p>
-      {% endfor %}
-  {% endif %}
-
+     
         <form action="/search/" method="get" accept-charset="utf-8">
           <label for="search-field">SEARCH</label>
           <input type="text" name="q" placeholder="Enter search here" id="search-field" class="blink search-field"  />
