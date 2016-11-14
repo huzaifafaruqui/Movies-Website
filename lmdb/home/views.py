@@ -15,10 +15,14 @@ from django.shortcuts import render
 def advanced(request):
 	form=SearchForm(request.POST or None)
 	form2=SearchForm2(request.POST or None)
-
+	#print request.POST.getlist('genres')
+	#print form['minr'].value()
+	#print form.cleaned_data['minr']
 	if form.is_valid() and form2.is_valid():
 		f1=form.cleaned_data['title'].lower()
 		f2=form.cleaned_data['actors']
+		min_rating=form.cleaned_data['minr']
+		max_rating=form.cleaned_data['maxr']
 		context={
 		"title":f1
 		,'actors':f2

@@ -40,8 +40,14 @@ class CommentForm(forms.ModelForm):
 
 
 class SearchForm(forms.ModelForm):
+	genres = forms.MultipleChoiceField(choices=Movie.genres,widget=forms.CheckboxSelectMultiple,label="Genres:")
+	#rating=forms.MultipleChoiceField(choices=Comment.RATINGS,widget=forms.CheckboxSelectMultiple,label="rating:")
+	
+	minr=forms.IntegerField()
+	maxr=forms.IntegerField()
 	class Meta:
 		model=Movie
+		
 		exclude=['image','duration']
 
 class SearchForm2(forms.ModelForm):
