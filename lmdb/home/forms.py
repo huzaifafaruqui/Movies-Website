@@ -44,7 +44,6 @@ class SearchForm(forms.ModelForm):
 	#rating=forms.MultipleChoiceField(choices=Comment.RATINGS,widget=forms.CheckboxSelectMultiple,label="rating:")
 	
 	minr=forms.IntegerField()
-	maxr=forms.IntegerField()
 	class Meta:
 		model=Movie
 		

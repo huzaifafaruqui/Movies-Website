@@ -8,35 +8,33 @@ from django.contrib.auth import logout
 from home.forms import *
 from django.contrib import messages
 from django.db.models import Avg
+import smtplib
 # Create your views here.
 
 from django.shortcuts import render
 
 def advanced(request):
 	form=SearchForm(request.POST or None)
-	form2=SearchForm2(request.POST or None)
-	#print request.POST.getlist('genres')
-	#print form['minr'].value()
-	#print form.cleaned_data['minr']
-	if form.is_valid() and form2.is_valid():
+ 
+	if form.is_valid():
 		f1=form.cleaned_data['title'].lower()
+ 
 		f2=form.cleaned_data['actors']
+ 
 		min_rating=form.cleaned_data['minr']
-		max_rating=form.cleaned_data['maxr']
-		context={
-		"title":f1
-		,'actors':f2
-		}
-		queryset=Movie.objects.filter(title__icontains=f1)
-		
-		return render(request,"x.html",context)
-		#for obj in queryset:
-		#	if obj.title and f2==obj.:
-				#return render(request,"index.html",context)
-
+ 
+		genres=form.cleaned_data['genres']
+ 
+		m2=[x.pk for x in Movie.objects.all() if x.average_rating >=min_rating]
+ 
+		movies=(Movie.objects.filter(title__icontains=f1) | Movie.objects.filter(actors__in=f2)).filter(genre__in=genres).filter(pk__in=m2)
+ 
+		context={'movies':movies}
+		return render(request, 'search_results.html',context)
+ 
 	context={
-    'form':form,'form2':form2
-
+    'form':form
+ 
     }
 	return render(request,"advanced_search.html",context)
 
@@ -58,11 +56,20 @@ def register_page(request):
 	if request.method == 'POST':
 		form = RegistrationForm(request.POST)
 		if form.is_valid():
+			print 'lol'
+			email=form.cleaned_data['email']
 			user = User.objects.create_user(
 			username=form.cleaned_data['username'],
 			password=form.cleaned_data['password1'],
-			email=form.cleaned_data['email'],
+			email=email,
 			first_name=form.cleaned_data['name'])
+			content='example email stuff here'
+			mail=smtplib.SMTP('smtp.gmail.com',587)
+			mail.ehlo()
+			mail.starttls()
+			mail.login('lab.movie.database@gmail.com','codeforces123')
+			mail.sendmail('lab.movie.database@gmail.com',email,content)
+			mail.close()
 			
 			return HttpResponseRedirect('/')
 	else:

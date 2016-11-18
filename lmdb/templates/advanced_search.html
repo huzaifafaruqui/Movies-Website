@@ -36,12 +36,14 @@
      
     <div class="container">
        {{ form.non_field_errors }}
-      <form class="form-signin" method="POST" action=''>{% csrf_token %}
+      <form class="form-signin" method="POST" action='.'>
+      {% csrf_token %}          {% csrf_token %}
+
         <h2 class="form-signin-heading">Advanced Search</h2>
 
 
         
-        
+        <!--
         {{ form.title.errors }}
         <label for="{{form.title.id_for_label}}" class="sr-only">Title</label>
         <input name="title" type="text" id="title1" class="form-control" placeholder="Title" required="" autofocus="">
@@ -53,31 +55,18 @@
         {{ form.director.errors }}
         <label for="{{form.director.id_for_label}}" class="sr-only">Ditector</label>
         <input name="director" type="text" id="title3" class="form-control" placeholder="Director" required="" autofocus="">
-
+-->
+<p><label for="id_title">Title:</label> <input id="id_title" maxlength="30" name="title" type="text" /></p>
+<p><label for="id_actors">Actors:</label> <select multiple="multiple" id="id_actors" name="actors">
+<option value="1">MOHD HUZAIFA FARUQUI</option>
+<option value="2">Gaurav Arora</option>
+</select></p>
+<!--{{form.as_p}}-->
       <div class="inputs">
  
 
-  </div>
-        <label for="id_genre">Genre:</label>
-        <select id="id_genre" name="genre" style="width:200px">
-        <option value>---------</option>    
-        <option value="action">Action</option>
-        <option value="comedy">Comedy</option>
-        <option value="romance">Romance</option>
-        <option value="thriller">Thriller</option>
-        <option value="drama">Drama</option>
 
-
-        </select>
-        
-        
-        
-        <div class="checkbox">
-          
-        </div>
-        <br>
-        <br>
-        <br><br><br>
+     
         
        <label for="id_genres_0">Genres:</label> <ul id="id_genres"><li><label for="id_genres_0"><input id="id_genres_0" name="genres" type="checkbox" value="action" /> ACTION</label></li>
 <li><label for="id_genres_1"><input id="id_genres_1" name="genres" type="checkbox" value="comedy" /> COMEDY</label></li>
@@ -91,18 +80,10 @@
   <option value="2">2</option>
   <option value="3">3</option>
   <option value="4">4</option>
-    <option value="5">5</option>
+<option value="5">5</option>
 </select>      
 
-<p></p>
-<label for="id_maxr">Maximum Rating:</label>
-<select id="id_maxr" name="maxr">
-  <option value="1">1</option>
-  <option value="2">2</option>
-  <option value="3">3</option>
-  <option value="4">4</option>
-    <option value="5">5</option>
-</select>  
+<p></p> 
  <!--{{form.as_p}}-->
 
 <button class="btn btn-lg btn-primary btn-block" type="submit">Search</button>
