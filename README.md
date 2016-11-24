@@ -55,7 +55,8 @@ If you'd like to request a new functionality, feel free to do so by opening an i
 
  - Write Tests
  - Add Code Comments
- - Backend
+ - Add More Data
+ - Improve UI
 
 ## Contributors
 1. [Tafseer Ahmed](https://github.com/tafseerahmed)
