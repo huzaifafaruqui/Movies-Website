@@ -27,6 +27,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'lab.movie.database@gmail.com'
+EMAIL_HOST_PASSWORD = 'codeforces123'
 
 # Application definition
 
@@ -37,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+ #   'haystack',
     'home',
 ]
 
@@ -82,6 +88,13 @@ DATABASES = {
     }
 }
 
+#HAYSTACK_CONNECTIONS = {
+ #   'default': {
+ #       'ENGINE': 'haystack.backends.elasticsearch_backend.ElasticsearchSearchEngine',
+ #       'URL': 'http://127.0.0.1:9200/',
+  #      'INDEX_NAME': 'haystack',
+  #  },
+#}
 
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
