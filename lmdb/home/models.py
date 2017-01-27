@@ -12,7 +12,8 @@ class Actor(models.Model):
     first_name = models.CharField(max_length=30, blank=True)
     last_name = models.CharField(max_length=40, blank=True)
     age = models.IntegerField(default='20')
-
+    GENDER_CHOICES = (('M', 'Male'), ('F', 'Female'), )
+    gender = models.CharField(max_length=1, choices=GENDER_CHOICES)
     def __str__(self):
         return u'%s %s' % (self.first_name, self.last_name)
 
@@ -35,7 +36,9 @@ class Movie(models.Model):
     director = models.ForeignKey(Director, blank=True, null=True)
     genre = models.CharField(max_length=30, choices=genres, default='drama', blank=True)
     image = models.ImageField(upload_to='static/images/products', default='pictures/movie2.jpg')
-    duration = models.DurationField()
+    #duration = models.DurationField()
+    plot = models.TextField()  #story of movie
+
 
     @property  # http://www.blog.pythonlibrary.org/2014/01/20/python-201-properties/
     def average_rating(self):
@@ -48,8 +51,9 @@ class Movie(models.Model):
 
 class Comment(models.Model):
     RATINGS = ((5, 5), (4, 4), (3, 3), (2, 2), (1, 1))
-    movie = models.ForeignKey('home.Movie', related_name='comments')
-    author = models.ForeignKey(User)
+    movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
+    #https://docs.djangoproject.com/en/1.10/topics/db/examples/many_to_one/
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
     text = models.TextField()
     created_date = models.DateTimeField(default=timezone.now)
     approved_comment = models.BooleanField(default=True)
